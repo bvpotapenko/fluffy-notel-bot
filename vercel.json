@@ -1,0 +1,26 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "bot.py",
+        "use": "@vercel/python",
+        "config": {
+          "entrypoint": "main"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/webhook",
+        "methods": ["POST"],
+        "dest": "bot.py"
+      }
+    ],
+    "env": {
+      "TELEGRAM_BOT_TOKEN": "@telegram_bot_token",
+      "ENCRYPTION_KEY": "@encryption_key",
+      "WEBHOOK_URL": "@webhook_url",
+      "PORT": "8080"
+    }
+  }
+  
